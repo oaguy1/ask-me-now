@@ -3,7 +3,17 @@
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+
+import os
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = True
+
 ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window; you may, of course, use a different value.
+AUTH_PROFILE_MODULE = "Profile.Profile"
+LOGIN_REDIRECT_URL = '/profiles/'
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -122,8 +132,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'registration',
+    'profiles',
+    'Profile',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
