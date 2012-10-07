@@ -5,11 +5,10 @@ from django.conf.urls import patterns, include, url
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+	(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'accounts/login.html'}),
+	(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}),
     # Examples:
-    url(r'^$', 'project.views.direct',),
-    # url(r'^$', 'project.project.views', name='home'),
-    url(r'^account/', include('accounts.urls')),
-
+    url(r'^register/$', 'project.accounts.views.register',),
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
